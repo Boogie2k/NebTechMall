@@ -1,0 +1,23 @@
+.heroImg {
+    background-image: url("../public/images/hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heroImgs {
+    background-image: url("../public/images/imgs.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carouselArrowLeft,
+.carouselArrowRight {
+    position: absolute;
+}
+
+.carouselArrowLeft {
+    left: 50%;
+    transform: translateX(-90px);
+}
