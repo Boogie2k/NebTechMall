@@ -78,12 +78,13 @@ emailjs
   };
 
   // you can call this function anything
-  const onSuccess = (reference:any) => {
+  const onSuccess = () => {
 
     sendEmail()
     // Implementation for whatever you want to do with reference and after success call.
-    alert(reference);
-    console.log(reference);
+   /*  alert(reference);
+    console.log(reference); */
+    alert('success')
   };
 
   // you can call this function anything
