@@ -24,7 +24,7 @@ totalQty +=item.qty
   })
 return(<>
          
-<table className="table-auto border-separate border-spacing-10">
+<table className="table-auto border-separate border-spacing-5 lg:border-spacing-10">
   {cart.map((items:any)=>{
             console.log(items)
             return(<tbody key={items._id} >
