@@ -64,7 +64,7 @@ totalQty +=item.qty
 
     return(
     
-      <div className={`${' lg:flex justify-between  font-sans  mb-4 ps-4 lg:ps-0'} ${'bg-slate-300'}`}>
+      <div key={items._id} className={`${' lg:flex justify-between  font-sans  mb-4 ps-4 lg:ps-0'} ${'bg-slate-300'}`}>
         <h4 className='lg:w-1/5 text-left lg:text-center'> <span className='lg:hidden  font-bold'>Item:</span> {items.product}</h4> 
         <h4 className='lg:w-1/5 text-left lg:text-center'><span className='lg:hidden  font-bold'>Price:</span>{items.price}</h4>
          <h4 className='lg:w-1/5 text-left lg:text-center'><span className='lg:hidden  font-bold'>Qty:</span>{items.qty}</h4> 

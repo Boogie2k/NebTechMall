@@ -61,7 +61,7 @@ function Example({cart, setCart, setIsModals, closeModals}:any): any {
     )
   );
 
-  if (isLoading) return (<div className='min-h-screen'><h4 className='text-red-500 w-100'>"Loading..."</h4></div>);
+  if (isLoading) return (<div className='min-h-screen'><h4 className='text-red-500 w-100'>Loading...</h4></div>);
 
   if (error) return "An error has occurred: " + error;
 
@@ -102,7 +102,7 @@ console.log(cart)
     <div className=' grid grid-cols-5'>{filt.map((items:any)=>{ return(
      
 
-      <div className=' m-2  border-gray-400 border-4 hover:border-4 hover:border-orange-700 p-7 shadow-lg' > 
+      <div key={items._id} className=' m-2  border-gray-400 border-4 hover:border-4 hover:border-orange-700 p-7 shadow-lg' > 
  <Link href={`/phone/${items._id}`}> <img className='h-60 w-40 '  src={items.image} alt =''/> <h4 className='text-center font-bold'>{items.name} {items.model}</h4>
     </Link> <div className='flex justify-between'><p className='text-red-500 text-xl'>${items.price}</p>
   

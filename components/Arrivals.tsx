@@ -49,7 +49,7 @@ const loadCart=()=>{
     <div className=' grid grid-cols-2  lg:flex lg:justify-evenly'>{filt.map((items:any)=>{ return(
      
 
-      <div className='w-50 m-2 lg:w-1/6 border-gray-400 border-4 hover:border-4 hover:border-orange-700 p-7 shadow-lg' > 
+      <div key={items._id}  className='w-50 m-2 lg:w-1/6 border-gray-400 border-4 hover:border-4 hover:border-orange-700 p-7 shadow-lg' > 
  <Link href={`/phone/${items._id}`}> <img className='h-60 w-40 '  src={items.image} alt =''/> <h4 className='text-center font-bold'>{items.name} {items.model}</h4>
     </Link> <div className='flex justify-between'><p className='text-red-500 text-xl'>${items.price}</p>
   

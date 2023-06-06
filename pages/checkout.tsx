@@ -27,7 +27,7 @@ return(<>
 <table className="table-auto border-separate border-spacing-10">
   {cart.map((items:any)=>{
             console.log(items)
-            return(<tbody>
+            return(<tbody key={items._id} >
     <tr>
      <td className='border-2 border-red-900'>{items.product}</td>
      <td className=''>{items.price}</td>

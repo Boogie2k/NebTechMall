@@ -34,7 +34,7 @@ function Example({cart, setCart}:any): any {
     )
   );
 
-  if (isLoading) return (<div className='min-h-screen'><h4 className='text-red-500 w-100'>"Loading..."</h4></div>);
+  if (isLoading) return (<div className='min-h-screen'><h4 className='text-red-500 w-100'>Loading...</h4></div>);
 
   if (error) return "An error has occurred: " + error;
 
