@@ -3,9 +3,8 @@ import React from 'react'
 
 const Cart = ({cart, setCart}:any) => {
 
-let increaseQty;
+
 let decreaseQty;
-let qty;
 
 const removeItem = (itemId: string) => {
   
@@ -41,15 +40,34 @@ totalQty +=item.qty
 
     return(
     
-      <div key={items._id} className={`${' lg:flex justify-between  font-sans  mb-4 ps-4 lg:ps-0'} ${'bg-slate-300'}`}>
+      <div key={items._id} className={`${' lg:flex justify-between  font-sans  mb-4 ps-4 lg:ps-0 items-center'} ${'bg-slate-300'}`}>
         <h4 className='lg:w-1/5 text-left lg:text-center'> <span className='lg:hidden me-2 font-bold'>Item:</span> {items.product}</h4> 
         <h4 className='lg:w-1/5 text-left lg:text-center'><span className='lg:hidden me-2   font-bold'>Price:</span>{items.price.toLocaleString()}</h4>
-         <div className='w-2/5 lg:w-1/5 font-semibold  text-left lg:text-center'><span className='lg:hidden  me-2  font-bold'>Qty:</span>
-          <button className='border-2 hover:bg-slate-500 border-slate-400 w-4/12 text-slate-700 text-xl me-1' >+</button>{items.qty}
-           <button className='border-2 hover:bg-slate-500 border-slate-400 w-4/12 text-slate-700 text-xl ms-1' >-</button>
+         <div className=' lg:w-1/5 font-semibold  text-left lg:text-center'><span className='lg:hidden  me-2  font-bold'>Qty:</span>
+          <button onClick={()=>{  const updatedCart = cart.map((item: any) => {
+      if (item.id === items.id) {
+        return {
+          ...item,
+          qty: item.qty + 1,
+        };
+      }
+      return item;
+    });
+    setCart(updatedCart);}} className='border-2 hover:bg-slate-500 border-slate-400  text-slate-700 text-xl me-2 w-12' >+</button>
+    {items.qty}
+           <button onClick={()=>{  const updatedCart = cart.map((item: any) => {
+      if (item.id === items.id && item.qty>1) {
+        return {
+          ...item,
+          qty: item.qty - 1,
+        };
+      }
+      return item;
+    });
+    setCart(updatedCart);}} className='border-2 hover:bg-slate-500 border-slate-400 w-4/12 text-slate-700 text-xl ms-2 w-12' >-</button>
           </div> 
          <h4 className='lg:w-1/5 text-left lg:text-center'><span className='lg:hidden me-2  font-bold'>Total</span>{items.total.toLocaleString()}</h4>
-      <div  className='w-1/5 text-left  lg:text-center  border-2 border-red-700'><button onClick={()=>{   const updatedCart = cart.filter((item: any) => item.id !== items.id);
+      <div  className='w-1/5 text-left  lg:text-center  border-2 border-slate-700 text-red-500 hover:text-red-700 hover:bg-slate-500'><button onClick={()=>{   const updatedCart = cart.filter((item: any) => item.id !== items.id);
     setCart(updatedCart);}}>Remove</button> </div>
         </div>
 
