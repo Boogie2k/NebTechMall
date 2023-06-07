@@ -64,7 +64,7 @@ totalQty +=item.qty
       }
       return item;
     });
-    setCart(updatedCart);}} className='border-2 hover:bg-slate-500 border-slate-400 w-4/12 text-slate-700 text-xl ms-2 w-12' >-</button>
+    setCart(updatedCart);}} className='border-2 hover:bg-slate-500 border-slate-400  text-slate-700 text-xl ms-2 w-12' >-</button>
           </div> 
          <h4 className='lg:w-1/5 text-left lg:text-center'><span className='lg:hidden me-2  font-bold'>Total</span>{items.total.toLocaleString()}</h4>
       <div  className='w-1/5 text-left  lg:text-center  border-2 border-slate-700 text-red-500 hover:text-red-700 hover:bg-slate-500'><button onClick={()=>{   const updatedCart = cart.filter((item: any) => item.id !== items.id);
