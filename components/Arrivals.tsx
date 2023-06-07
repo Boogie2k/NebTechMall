@@ -50,7 +50,7 @@ const loadCart=()=>{
      
 
       <div key={items._id}  className='w-50 m-2 lg:w-1/6 border-gray-400 border-4 hover:border-4 hover:border-orange-700 p-7 shadow-lg' > 
- <Link href={`/phone/${items._id}`}> <img className='h-60 w-40 '  src={items.image} alt =''/> <h4 className='text-center font-bold  text-sm'>{items.name} {items.model}</h4>
+ <Link href={`/phone/${items._id}`}> <img className='h-40 w-45 lg:h-60 lg:w-40 '  src={items.image} alt =''/> <h4 className='text-center font-bold  text-sm'>{items.name} {items.model}</h4>
     </Link> <div className='flex flex-col lg:flex-row justify-between  relative top-5 items-center '><p className='text-red-500 text-xl'>${items.price}</p>
   
   <div className='items-center font-semibold text-center bg-orange-700 hover:bg-orange-900 p-1 mt-1  text-center flex text-white   text-xl rounded-md cursor-pointer'>
