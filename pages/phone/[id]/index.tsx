@@ -60,7 +60,7 @@ console.log(data.items)
 const loadCart=()=>{
 /*  cart.map((items:any)=>console.log(items)) */
   setCart([...cart, {product:data.items.name +' ' + data.items.model, qty:qty, price:data.items.price, image:data.items.image,
-   total:data.items.price*qty}])
+   total:data.items.price*qty, id: data.items._id}])
 console.log(cart)
 
 }
@@ -79,7 +79,7 @@ console.log(cart)
        
        <section className='pb-6 border-b-2 border-slate-500'>
         <p className='text-red-500 pb-4 text-2xl'>
-          ${data.items.price}
+          ${data.items.price.toLocaleString()}
         </p>
 
       <div className='flex   w-2/4 justify-between'>  

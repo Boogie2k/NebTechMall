@@ -6,7 +6,7 @@ const Nav = ({cart, openMenu}:any) => {
   cart.map((item:any)=>{
     qty +=item.qty
   })
-  return<> <nav className="bg-orange-500 flex justify-between px-2.5 py-2.5 w-full"> <h4 className="text-3xl">NebTech</h4>
+  return<> <nav className="bg-orange-500 flex justify-between px-2.5 py-2.5 w-full"><Link href={'/'}> <h4 className="text-3xl">NebTech</h4></Link>
   
 <Link className=" min-w-fit bg-slate-700" href='/cart'>
 <div className="flex  w-full justify-center">

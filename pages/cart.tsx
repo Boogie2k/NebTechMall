@@ -1,7 +1,16 @@
 import Link from 'next/link';
 import React from 'react'
 
-const Cart = ({cart}:any) => {
+const Cart = ({cart, setCart}:any) => {
+
+let increaseQty;
+let decreaseQty;
+let qty;
+
+const removeItem = (itemId: string) => {
+  
+  };
+
   let totalPrice =0;
 let totalQty=0;
 
@@ -22,39 +31,7 @@ totalQty +=item.qty
 {totalPrice?
         <div className='flex text-center flex-col justify-center align-center  '>
 
-          
-{/* <table className="table-auto border-separate  border-spacing-5 lg:border-spacing-10  w-2/4 mx-auto">
-  <thead>
-    <tr>
-      <th className=''>Item</th>
-     
-      <th  className=''>price</th> 
-      <th className=' '>qty</th>
-       <th  className=''>Total</th>
-    </tr>
-  </thead>{cart.map((items:any)=>{
-            console.log(items)
-            return(<tbody>
-    <tr>
-     <td className=''>{items.product}</td>
-     <td className=''>{items.price}</td>
-       <td className=' '>{items.qty}</td>
-         
-         <td className=''>{items.total}</td>
-          <td>remove</td>
-    </tr></tbody>)})}
-
-      <tr>
-      <th className=' '></th>
-      <th className=' '>Order Total</th>
-       <th  className=''>{totalQty}</th>
-       <th  className=' '>{totalPrice}</th>
-    </tr>
-   
-  </table>
   
-  
-  */
   
   <section className=' lg:w-2/4   lg:mx-auto' >
    
@@ -65,11 +42,15 @@ totalQty +=item.qty
     return(
     
       <div key={items._id} className={`${' lg:flex justify-between  font-sans  mb-4 ps-4 lg:ps-0'} ${'bg-slate-300'}`}>
-        <h4 className='lg:w-1/5 text-left lg:text-center'> <span className='lg:hidden  font-bold'>Item:</span> {items.product}</h4> 
-        <h4 className='lg:w-1/5 text-left lg:text-center'><span className='lg:hidden  font-bold'>Price:</span>{items.price}</h4>
-         <h4 className='lg:w-1/5 text-left lg:text-center'><span className='lg:hidden  font-bold'>Qty:</span>{items.qty}</h4> 
-         <h4 className='lg:w-1/5 text-left lg:text-center'><span className='lg:hidden  font-bold'>Total</span>{items.total}</h4>
-      <div className='w-1/5 text-left  lg:text-center  border-2 border-red-700'>Remove</div>
+        <h4 className='lg:w-1/5 text-left lg:text-center'> <span className='lg:hidden me-2 font-bold'>Item:</span> {items.product}</h4> 
+        <h4 className='lg:w-1/5 text-left lg:text-center'><span className='lg:hidden me-2   font-bold'>Price:</span>{items.price.toLocaleString()}</h4>
+         <div className='w-2/5 lg:w-1/5 font-semibold  text-left lg:text-center'><span className='lg:hidden  me-2  font-bold'>Qty:</span>
+          <button className='border-2 hover:bg-slate-500 border-slate-400 w-4/12 text-slate-700 text-xl me-1' >+</button>{items.qty}
+           <button className='border-2 hover:bg-slate-500 border-slate-400 w-4/12 text-slate-700 text-xl ms-1' >-</button>
+          </div> 
+         <h4 className='lg:w-1/5 text-left lg:text-center'><span className='lg:hidden me-2  font-bold'>Total</span>{items.total.toLocaleString()}</h4>
+      <div  className='w-1/5 text-left  lg:text-center  border-2 border-red-700'><button onClick={()=>{   const updatedCart = cart.filter((item: any) => item.id !== items.id);
+    setCart(updatedCart);}}>Remove</button> </div>
         </div>
 
         
@@ -79,11 +60,11 @@ totalQty +=item.qty
  <div className='  flex justify-between mt-6 font-semibold text-lg'>
         <h4 className='lg:w-1/5 text-center '></h4> 
         <h4 className='lg:w-1/5'>Order Total</h4>
-         <h4 className='lg:w-1/5'>{totalQty}</h4> 
-        <span className='lg:w-1/5'>{totalPrice}</span>
+       <h4 className='lg:w-1/5'>{totalQty}</h4> 
+        <span className='lg:w-1/5'>{totalPrice.toLocaleString()}</span>
         <span className='lg:w-1/5'></span></div>
   </section>
-  }<div className=' text-right lg:w-2/4 mt-5 mx-auto'>
+  <div className=' text-right lg:w-2/4 mt-5 mx-auto'>
 <Link href='/checkout' className='bg-orange-600 lg:w-1/4 text-right me-0  text-slate-200 text-xl p-3 rounded-2xl '>Proceed to Checkout</Link>
 
 </div>

@@ -30,10 +30,10 @@ return(<>
             return(<tbody key={items._id} >
     <tr>
      <td className='border-2 border-red-900'>{items.product}</td>
-     <td className=''>{items.price}</td>
+     <td className=''>{items.price.toLocaleString()}</td>
        <td className=' '>{items.qty}</td>
          
-         <td className=''>{items.total}</td>
+         <td className=''>{items.total.toLocaleString()}</td>
        
     </tr></tbody>)})}
 
@@ -41,7 +41,7 @@ return(<>
       <th className=' '></th>
       <th className=' '>Total</th>
        <th  className=''></th>
-       <th  className=' '>{totalPrice}</th>
+       <th  className=' '>{totalPrice.toLocaleString()}</th>
     </tr>
   </table>
 
