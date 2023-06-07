@@ -50,7 +50,7 @@ const Nav = () => {
 <div className={`${navStyles.heroImgs} min-h-screen  w-full`}>
 
 </div> */}
-  <Carousel  renderArrowPrev={renderArrowPrev}
+  <Carousel swipeable={false}  renderArrowPrev={renderArrowPrev}
       renderArrowNext={renderArrowNext} >
                 <div className={`${navStyles.heroImg} min-h-screen`}>
                     
